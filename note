@@ -1,0 +1,50 @@
+什么框架
+通用性强得项目模板
+
+学习框架
+各种用法熟悉
+
+什么是
+爬虫有名得框架
+1.高性能持久化存储
+2.异步下早数据
+3.高性能数据解析
+4.分布式支持
+
+基本使用
+    环境安装
+    mac或者linux很容易,pip install scrapy
+    win会繁琐
+
+python -m pip install scrapy
+python -m pip install --upgrade pip
+
+scrapy创建项目
+python -m scrapy startproject scrapy_baidu_091
+项目名字不能数字开头和包含中文
+
+创建爬虫文件
+cd scrapy_baidu_091\scrapy_baidu_091\spiders
+python -m scrapy genspider baidu www.baidu.com
+python -m scrapy genspider "网页名字" "具体得网址,不用加http,因为会干扰代码生成"
+
+python -m scrapy crawl baidu
+settings.py中注释robots,进行初级反爬绕过
+
+完成安装,项目创建,开始爬虫,尝试绕过
+
+1.scrapy项目结构
+    spiders 爬虫文件
+        init
+        自定义得爬虫文件    ********
+    init    定义数据结构
+    middleware  中间件 代理
+    pipelines   管道
+    settings    配置文件
+2.response得属性和方法
+    response.text   获取得是想用得字符串
+    response.body   获取得是二进制数据
+    response.xpath  可以直接是xpath方法来解析response中得内容
+    response.extract()  提取seletor对象得data属性值
+    response.extract_first()    提取得seletor列表得第一个数据
+
